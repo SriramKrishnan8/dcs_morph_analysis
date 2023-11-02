@@ -33,7 +33,7 @@ pip3 install devtrans tqdm
 ## Execution
 
 ```
-python3 get_dcs_sh_morph.py rv_analysis_map.tsv input_words.tsv dcs_sh_output.tsv ../scl_sandhi_interface/
+python3 get_dcs_sh_morph.py rv_analysis_map.tsv input_words.tsv dcs_sh_output.tsv
 ```
 
 ### Input / Output
