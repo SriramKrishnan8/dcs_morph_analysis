@@ -56,7 +56,7 @@ def process_wrds(wrd, words_dict):
     
     if wrd in words_dict:
         status = "success"
-        new_dict = words_dict[wrd]
+        new_dict = json.loads(words_dict[wrd])
     else:
         status = "unrecognized"
         new_dict["input"] = wrd
@@ -169,7 +169,9 @@ for i in tqdm(range(len(cl_lines))):
         new_word, new_dict, status = process_terms(wrd, words_dict)
         wrd_done.append(wrd)
     
-    new_analysis = "\t".join((new_word, str(new_dict), status))
+    # Not using the word and status separately temporarily
+#    new_analysis = "\t".join((new_word, str(new_dict), status))
+    new_analysis = json.dumps(new_dict, ensure_ascii=False)
         
     new_analysis_lst.append(new_analysis)
 
