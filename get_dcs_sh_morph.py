@@ -65,6 +65,23 @@ def process_wrds(wrd, words_dict):
     return wrd, new_dict, status
     
 
+def process_morph(morph_dict_list):
+    """ """
+
+    new_morph_dict_list = []
+
+    for item in morph_dict_list:
+        word = item["word"]
+        
+        processed_dict = item.copy()
+        processed_dict["word"] = word if "-" in word else (word + "-")
+
+        new_morph_dict_list.append(processed_dict)
+
+    return new_morph_dict_list
+    
+
+
 def process_compositional(wrd, words_dict):
     
     components = wrd.split("-")
@@ -76,7 +93,12 @@ def process_compositional(wrd, words_dict):
         if comp in words_dict:
             comp_len = comp_len - 1
             tmp_dict = json.loads(words_dict[comp])
-            new_mrph_lst = new_mrph_lst + tmp_dict["morph"]
+            if comp_len == 0:
+                processed_dict_list = tmp_dict["morph"]
+            else:
+                processed_dict_list = process_morph(tmp_dict["morph"])
+            
+            new_mrph_lst = new_mrph_lst + processed_dict_list
         else:
             break
         
