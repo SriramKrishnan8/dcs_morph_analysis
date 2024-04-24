@@ -11,9 +11,6 @@ The following are the contents of the package:
 5. input\_words.tsc &rarr; A sample list of words for testing
 6. sandhi &rarr; contains files from the [sandhi-joiner package](https://github.com/SriramKrishnan8/scl_sandhi_interface.git) that perform sandhi operation over the components of compounds or words separated by a hyphen ("-"). This helps in handling words from the Vedic pada-patha.
 
-<!--In addition to these, the [sandhi-joiner package](https://github.com/SriramKrishnan8/scl_sandhi_interface.git) has to be fed to the script to perform sandhi operation over the components of compounds or words separated by a hyphen ("-"). This helps in handling words from the Vedic pada-patha.-->
-
-
 ## The Process
 
 DCS stores its analyses in CoNLL-U format. These are converted to the Sanskrit Heritage's representation of morphological analyses. And then this package helps in checking the analysis of words.
@@ -42,6 +39,6 @@ Input:
 
 1. rv\_analysis\_map.tsv &rarr; the mapping file extracted from DCS and generated from its analyses
 2. input\_words.tsv &rarr; newline separated words
-3. dcs\_sh\_output.tsv &rarr; resultant list of JSON entries corresponding to the words
+3. output\_rv.tsv and output\_av.tsv &rarr; resultant list of JSON entries from RV and AV corresponding to the words
 
 (NOTE: the scripts for parsing the CoNLL-U format and extracting the morphological analyses will be added soon.)
