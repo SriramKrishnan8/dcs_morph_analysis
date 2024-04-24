@@ -31,6 +31,32 @@ def handle_terminal_sandhis(word):
     return new_word_dev
 
 
+def modify_dict(json_str, new_word):
+    """ """
+    
+    dict_ = json.loads(json_str)
+    new_dict = dict_.copy()
+    
+    new_dict["input"] = new_word
+    
+    if not new_dict["status"] == "success":
+        return new_dict
+    
+    new_seg_lst = [ handle_terminal_sandhis(seg) for seg in dict_["segmentation"] ]
+    new_dict["segmentation"] = new_seg_lst
+    
+    new_mrph_lst = []
+    for mrph in dict_["morph"]:
+        new_mrph = mrph.copy()
+        new_mrph["word"] = handle_terminal_sandhis(mrph["word"])
+        
+        new_mrph_lst.append(new_mrph)
+    
+    new_dict["morph"] = new_mrph_lst
+    
+    return new_dict
+    
+
 def get_dict(file_n):
     
     lines = open_contents(file_n)
@@ -45,7 +71,9 @@ def get_dict(file_n):
         new_word = handle_terminal_sandhis(word)
         w_dict[word] = split_item[1]
         if new_word not in w_dict:
-            w_dict[new_word] = split_item[1]
+            modified_dict = modify_dict(split_item[1], new_word)
+            modified_dict_str = json.dumps(modified_dict, ensure_ascii=False)
+            w_dict[new_word] = modified_dict_str
     
     return w_dict
 
@@ -94,9 +122,9 @@ def process_compositional(wrd, words_dict):
             comp_len = comp_len - 1
             tmp_dict = json.loads(words_dict[comp])
             if comp_len == 0:
-                processed_dict_list = tmp_dict["morph"]
+                processed_dict_list = tmp_dict.get("morph", [])
             else:
-                processed_dict_list = process_morph(tmp_dict["morph"])
+                processed_dict_list = process_morph(tmp_dict.get("morph", []))
             
             new_mrph_lst = new_mrph_lst + processed_dict_list
         else:
@@ -125,9 +153,13 @@ def process_non_compositional(wrd, words_dict):
     
     if sandhied_compound_dev in words_dict:
         tmp_dict = json.loads(words_dict[sandhied_compound_dev])
-        new_mrph_lst = tmp_dict["morph"]
-        status = "success"
-        word = sandhied_compound_dev
+        if tmp_dict["status"] == "unrecognized":
+            status = "unrecognized"
+            word = wrd
+        else:
+            new_mrph_lst = tmp_dict["morph"]
+            status = "success"
+            word = sandhied_compound_dev
     else:
         status = "unrecognized"
         word = wrd
@@ -166,6 +198,9 @@ def process_terms(wrd, words_dict):
         new_word, new_dict, status = process_cpds(wrd, words_dict)
     else:
         new_word, new_dict, status = process_wrds(wrd, words_dict)
+    
+    if status == "success":
+        new_dict["source"] = "DCS"
     
     return new_word, new_dict, status
 

@@ -6,12 +6,26 @@ import re
 
 #script, rcnn_inp, new_rcnn_out = sys.argv
 
+o_ending_words = [
+    "Bo", "aho", "aWo", "miWo", "ho", "Aho", "uwAho",
+]
+
+
 def handle_terminal_sandhis(text):
     """ """
     
     updated_text = re.sub(r'(a|i|u|E)s( |-|\n|$)', r'\1H\2', text)
     updated_text = re.sub(r'ns( |-|\n|$)', r'n\1', updated_text)
     updated_text = re.sub(r'(a|u)r( |-|\n|$)', r'\1r\2', updated_text)
+    
+    updated_text = re.sub(r'(a|A|i|I|u|U|e|E|o|O)s( |-|\n|$)', r'\1H\2', updated_text)
+    updated_text = re.sub(r'(a|A|i|I|u|U|e|E|o|O)r( |-|\n|$)', r'\1H\2', updated_text)
+    if updated_text not in o_ending_words:
+        updated_text = re.sub(r'o( |-|\n|$)', r'aH\1', updated_text)
+    
+    updated_text = re.sub(r'Av( |-|\n|$)', r'O\1', updated_text)
+    updated_text = re.sub(r'zv( |-|\n|$)', r'zu\1', updated_text)
+    updated_text = re.sub(r'sv( |-|\n|$)', r'su\1', updated_text)
     
     updated_text = re.sub(r'M( |-|\n|$)', r'm\1', updated_text)
     updated_text = re.sub(r'[KgG]( |-|\n|$)', r'k\1', updated_text)

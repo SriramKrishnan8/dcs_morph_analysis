@@ -1,0 +1,42 @@
+{"input": "अकरः", "status": "success", "segmentation": ["अकरः"], "morph": [{"word": "अकरः", "stem": "", "root": "कृ", "derivational_morph": "", "inflectional_morphs": ["pft./aor. [2] sg. 2"]}], "source": "DCS"}
+{"input": "अकरत्", "status": "success", "segmentation": ["अकरत्"], "morph": [{"word": "अकरत्", "stem": "", "root": "कृ", "derivational_morph": "", "inflectional_morphs": ["pft./aor. sg. 3"]}, {"word": "अकरत्", "stem": "", "root": "कृ", "derivational_morph": "", "inflectional_morphs": ["pft./aor. [2] sg. 3"]}], "source": "DCS"}
+{"input": "अकर्ताम्", "status": "success", "segmentation": ["अकर्ताम्"], "morph": [{"word": "अकर्ताम्", "stem": "", "root": "कृ", "derivational_morph": "", "inflectional_morphs": ["pft./aor. [1] du. 3"]}], "source": "DCS"}
+{"input": "अकवचः", "status": "success", "segmentation": ["अकवचः"], "morph": [{"word": "अकवचः", "stem": "अकवच", "root": "", "derivational_morph": "", "inflectional_morphs": ["m. sg. nom."]}], "source": "DCS"}
+{"input": "अकामकर्शनः", "status": "unrecognized"}
+{"input": "अकुप्यन्तः", "status": "unrecognized"}
+{"input": "अकृष्टपच्ये", "status": "success", "segmentation": ["अकृष्टपच्ये"], "morph": [{"word": "अकृष्टपच्ये", "stem": "अकृष्टपच्य", "root": "", "derivational_morph": "", "inflectional_morphs": ["n. sg. loc."]}], "source": "DCS"}
+{"input": "अक्रतुम्", "status": "success", "segmentation": ["अक्रतुम्"], "morph": [{"word": "अक्रतुम्", "stem": "अक्रतु", "root": "", "derivational_morph": "", "inflectional_morphs": ["f. sg. acc."]}], "source": "DCS"}
+{"input": "अक्रत्", "status": "unrecognized"}
+{"input": "अक्रव्य-अत्", "status": "unrecognized"}
+{"input": "अक्रंसत", "status": "unrecognized"}
+{"input": "अक्षान्-इव", "status": "success", "segmentation": ["अक्षान्-इव"], "morph": [{"word": "अक्षान्-", "stem": "अक्ष", "root": "", "derivational_morph": "", "inflectional_morphs": ["m. pl. acc."]}, {"word": "इव", "stem": "इव", "root": "", "derivational_morph": "", "inflectional_morphs": ["ind."]}], "source": "DCS"}
+{"input": "अक्षिणी", "status": "success", "segmentation": ["अक्षिणी"], "morph": [{"word": "अक्षिणी", "stem": "अक्षि", "root": "", "derivational_morph": "", "inflectional_morphs": ["n. du. nom."]}], "source": "DCS"}
+{"input": "अक्षित-ऊतयः", "status": "unrecognized"}
+{"input": "अक्षिभुवः", "status": "unrecognized"}
+{"input": "अक्षु-जालाभ्याम्", "status": "success", "segmentation": ["अक्षु-जालाभ्याम्"], "morph": [{"word": "अक्षु-", "stem": "अक्षु", "root": "", "derivational_morph": "", "inflectional_morphs": ["iic."]}, {"word": "जालाभ्याम्", "stem": "जाल", "root": "", "derivational_morph": "", "inflectional_morphs": ["n. du. i."]}], "source": "DCS"}
+{"input": "अक्षुध्याः", "status": "success", "segmentation": ["अक्षुध्याः"], "morph": [{"word": "अक्षुध्याः", "stem": "अक्षुध्य", "root": "", "derivational_morph": "", "inflectional_morphs": ["m. pl. nom."]}], "source": "DCS"}
+{"input": "अक्षुम्", "status": "success", "segmentation": ["अक्षुम्"], "morph": [{"word": "अक्षुम्", "stem": "अक्षु", "root": "", "derivational_morph": "", "inflectional_morphs": ["m. sg. acc."]}], "source": "DCS"}
+{"input": "अक्ष्योः", "status": "success", "segmentation": ["अक्ष्योः"], "morph": [{"word": "अक्ष्योः", "stem": "अक्षि", "root": "", "derivational_morph": "", "inflectional_morphs": ["n. du. g."]}, {"word": "अक्ष्योः", "stem": "अक्षी", "root": "", "derivational_morph": "", "inflectional_morphs": ["f. du. g."]}, {"word": "अक्ष्योः", "stem": "अक्षि", "root": "", "derivational_morph": "", "inflectional_morphs": ["n. du. loc."]}], "source": "DCS"}
+{"input": "अक्ष्यौ", "status": "success", "segmentation": ["अक्ष्यौ"], "morph": [{"word": "अक्ष्यौ", "stem": "अक्षी", "root": "", "derivational_morph": "", "inflectional_morphs": ["f. du. acc."]}, {"word": "अक्ष्यौ", "stem": "अक्षि", "root": "", "derivational_morph": "", "inflectional_morphs": ["n. du. nom."]}, {"word": "अक्ष्यौ", "stem": "अक्षि", "root": "", "derivational_morph": "", "inflectional_morphs": ["n. du. acc."]}], "source": "DCS"}
+{"input": "अग्रशः", "status": "success", "segmentation": ["अग्रशः"], "morph": [{"word": "अग्रशः", "stem": "अग्रशस्", "root": "", "derivational_morph": "", "inflectional_morphs": ["ind."]}], "source": "DCS"}
+{"input": "अघ-योः", "status": "success", "segmentation": ["अघ-योः"], "morph": [{"word": "अघ-", "stem": "अघ", "root": "", "derivational_morph": "", "inflectional_morphs": ["iic."]}, {"word": "योः", "stem": "योस्", "root": "", "derivational_morph": "", "inflectional_morphs": ["n. sg. nom."]}], "source": "DCS"}
+{"input": "अघकृत्-भिः", "status": "unrecognized"}
+{"input": "अग्निम्", "status": "success", "segmentation": ["अग्निम्"], "morph": [{"word": "अग्निम्", "stem": "अग्नि", "root": "", "derivational_morph": "", "inflectional_morphs": ["m. sg. acc."]}], "source": "DCS"}
+{"input": "ईडे", "status": "success", "segmentation": ["ईडे"], "morph": [{"word": "ईडे", "stem": "", "root": "ईड्", "derivational_morph": "", "inflectional_morphs": ["pr. sg. 1"]}], "source": "DCS"}
+{"input": "पुरोहितम्", "status": "success", "segmentation": ["पुरोहितम्"], "morph": [{"word": "पुरोहितम्", "stem": "पुरोहित", "root": "", "derivational_morph": "", "inflectional_morphs": ["m. sg. acc."]}], "source": "DCS"}
+{"input": "यज्ञस्य", "status": "success", "segmentation": ["यज्ञस्य"], "morph": [{"word": "यज्ञस्य", "stem": "यज्ञ", "root": "", "derivational_morph": "", "inflectional_morphs": ["m. sg. g."]}], "source": "DCS"}
+{"input": "देवम्", "status": "success", "segmentation": ["देवम्"], "morph": [{"word": "देवम्", "stem": "देव", "root": "", "derivational_morph": "", "inflectional_morphs": ["m. sg. acc."]}, {"word": "देवम्", "stem": "देव", "root": "", "derivational_morph": "", "inflectional_morphs": ["n. sg. nom."]}], "source": "DCS"}
+{"input": "ऋत्विजम्", "status": "unrecognized"}
+{"input": "होतारम्", "status": "success", "segmentation": ["होतारम्"], "morph": [{"word": "होतारम्", "stem": "होतृ", "root": "", "derivational_morph": "", "inflectional_morphs": ["m. sg. acc."]}], "source": "DCS"}
+{"input": "रत्नधातमम्", "status": "unrecognized"}
+{"input": "अग्निः", "status": "success", "segmentation": ["अग्निः"], "morph": [{"word": "अग्निः", "stem": "अग्नि", "root": "", "derivational_morph": "", "inflectional_morphs": ["m. sg. nom."]}, {"word": "अग्निः", "stem": "अग्नि", "root": "", "derivational_morph": "", "inflectional_morphs": ["f. sg. nom."]}], "source": "DCS"}
+{"input": "पूर्वेभिः", "status": "unrecognized"}
+{"input": "ऋषिऽभिः", "status": "unrecognized"}
+{"input": "ईड्यः", "status": "success", "segmentation": ["ईड्यः"], "morph": [{"word": "ईड्यः", "stem": "ईड्", "root": "", "derivational_morph": "pfp.", "inflectional_morphs": ["m. sg. nom."]}], "source": "DCS"}
+{"input": "नूतनैः", "status": "unrecognized"}
+{"input": "उत", "status": "success", "segmentation": ["उत"], "morph": [{"word": "उत", "stem": "उत", "root": "", "derivational_morph": "", "inflectional_morphs": ["ind."]}], "source": "DCS"}
+{"input": "सः", "status": "success", "segmentation": ["सः"], "morph": [{"word": "सः", "stem": "तद्", "root": "", "derivational_morph": "", "inflectional_morphs": ["m. sg. nom."]}], "source": "DCS"}
+{"input": "देवान्", "status": "success", "segmentation": ["देवान्"], "morph": [{"word": "देवान्", "stem": "देव", "root": "", "derivational_morph": "", "inflectional_morphs": ["m. pl. acc."]}], "source": "DCS"}
+{"input": "आ", "status": "success", "segmentation": ["आ"], "morph": [{"word": "आ", "stem": "आ", "root": "", "derivational_morph": "", "inflectional_morphs": ["prev."]}], "source": "DCS"}
+{"input": "इह", "status": "success", "segmentation": ["इह"], "morph": [{"word": "इह", "stem": "इह", "root": "", "derivational_morph": "", "inflectional_morphs": ["ind."]}], "source": "DCS"}
+{"input": "वक्षति", "status": "unrecognized"}
