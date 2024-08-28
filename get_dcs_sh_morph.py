@@ -1,6 +1,8 @@
 import sys
 import os
 import json
+import re
+
 from tqdm import tqdm
 
 import devtrans as dt
@@ -185,6 +187,29 @@ def process_cpds(wrd, words_dict):
     return new_word, new_dict, status
     
 
+def get_privative(wrd):
+    """ """
+    
+    wx_wrd = dt.dev2wx(wrd)
+    
+    # Temporarily only anu- is checked for the occurrences and not the others
+    # if any(item in wx_wrd for item in ["anu-", "apa-", "aBi-", "aXi-", "api"]):
+    if (not ("anu-" in wx_wrd)):
+        pattern = re.compile(r'^(an[^kKgGfcCjJFtTdDNwWxXnpPbBmyrlv].*?)$')
+        if re.fullmatch(pattern, wx_wrd):
+            new_wx_wrd = "an-" + wx_wrd[2:]
+        elif wx_wrd.startswith("a") and (not (wx_wrd[1] in ["f", "F", "N", "M"])):
+            new_wx_wrd = "a-" + wrd[1:]
+        else:
+            new_wx_wrd = wx_wrd
+    else:
+        new_wx_wrd = wx_wrd
+    
+    new_wrd = dt.wx2dev(new_wx_wrd)
+    
+    return new_wrd
+
+
 def process_terms(wrd, words_dict):
     """ """
     
@@ -205,6 +230,21 @@ def process_terms(wrd, words_dict):
     return new_word, new_dict, status
 
 
+def check_all_forms(wrd_lst, words_dict):
+    """ """
+    
+    status = "unrecognized"
+    
+    wrd_done = []
+    for wrd in wrd_lst:
+        if (wrd == "") or (wrd in wrd_done) or (not (status == "unrecognized")):
+            continue
+        new_word, new_dict, status = process_terms(wrd, words_dict)
+        wrd_done.append(wrd)
+    
+    return new_word, new_dict, status
+
+
 cl_lines = open_contents(cl)
 words_dict = get_dict(dict_)
 
@@ -217,14 +257,15 @@ for i in tqdm(range(len(cl_lines))):
     
     wrd_lst = ln.split("\t")
     
-    status = "unrecognized"
+    new_word, new_dict, status = check_all_forms(wrd_lst, words_dict)
     
-    wrd_done = []
-    for wrd in wrd_lst:
-        if (wrd == "") or (wrd in wrd_done) or (not (status == "unrecognized")):
-            continue
-        new_word, new_dict, status = process_terms(wrd, words_dict)
-        wrd_done.append(wrd)
+    if not (status == "success"):
+        wrd_lst_with_privative = [ get_privative(wrd) for wrd in wrd_lst ]
+        priv_word, priv_dict, priv_status = check_all_forms(wrd_lst_with_privative, words_dict)
+    
+    if (priv_status == "success"):
+        new_word = priv_word
+        new_dict = priv_dict.copy()
     
     # Not using the word and status separately temporarily
 #    new_analysis = "\t".join((new_word, str(new_dict), status))
