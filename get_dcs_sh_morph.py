@@ -262,10 +262,10 @@ for i in tqdm(range(len(cl_lines))):
     if not (status == "success"):
         wrd_lst_with_privative = [ get_privative(wrd) for wrd in wrd_lst ]
         priv_word, priv_dict, priv_status = check_all_forms(wrd_lst_with_privative, words_dict)
-    
-    if (priv_status == "success"):
-        new_word = priv_word
-        new_dict = priv_dict.copy()
+        if (priv_status == "success"):
+            new_word = priv_word
+            new_dict = priv_dict.copy()
+            status = "success"
     
     # Not using the word and status separately temporarily
 #    new_analysis = "\t".join((new_word, str(new_dict), status))
