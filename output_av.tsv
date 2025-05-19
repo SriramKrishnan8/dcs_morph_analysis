@@ -7,7 +7,7 @@
 {"input": "अकृष्टपच्ये", "status": "success", "segmentation": ["अकृष्टपच्ये"], "morph": [{"word": "अकृष्टपच्ये", "stem": "अकृष्टपच्य", "root": "", "derivational_morph": "", "inflectional_morphs": ["n. sg. loc."]}], "source": "DCS"}
 {"input": "अक्रतुम्", "status": "success", "segmentation": ["अक्रतुम्"], "morph": [{"word": "अक्रतुम्", "stem": "अक्रतु", "root": "", "derivational_morph": "", "inflectional_morphs": ["f. sg. acc."]}], "source": "DCS"}
 {"input": "अक्रत्", "status": "unrecognized"}
-{"input": "अक्रव्य-अत्", "status": "unrecognized"}
+{"input": "अ-क्रव्य-अत्", "status": "success", "segmentation": ["अ-क्रव्य-अत्"], "morph": [{"word": "अ-", "stem": "अ", "root": "", "derivational_morph": "", "inflectional_morphs": ["ind."]}, {"word": "अ-", "stem": "अ", "root": "", "derivational_morph": "", "inflectional_morphs": ["iic."]}, {"word": "क्रव्य-", "stem": "क्रव्य", "root": "", "derivational_morph": "", "inflectional_morphs": ["iic."]}, {"word": "अत्", "stem": "अद्", "root": "", "derivational_morph": "", "inflectional_morphs": ["m. sg. nom."]}], "source": "DCS"}
 {"input": "अक्रंसत", "status": "unrecognized"}
 {"input": "अक्षान्-इव", "status": "success", "segmentation": ["अक्षान्-इव"], "morph": [{"word": "अक्षान्-", "stem": "अक्ष", "root": "", "derivational_morph": "", "inflectional_morphs": ["m. pl. acc."]}, {"word": "इव", "stem": "इव", "root": "", "derivational_morph": "", "inflectional_morphs": ["ind."]}], "source": "DCS"}
 {"input": "अक्षिणी", "status": "success", "segmentation": ["अक्षिणी"], "morph": [{"word": "अक्षिणी", "stem": "अक्षि", "root": "", "derivational_morph": "", "inflectional_morphs": ["n. du. nom."]}], "source": "DCS"}

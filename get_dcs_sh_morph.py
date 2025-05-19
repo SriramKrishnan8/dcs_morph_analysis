@@ -7,10 +7,12 @@ from tqdm import tqdm
 
 import devtrans as dt
 
-from sandhi import transliteration as tl
-from sandhi import sandhi_words as sw
+import sandhi
+
+s = sandhi.Sandhi()
 
 import handle_terminal as ht
+import transliteration as tl
 
 script, dict_, cl, out_ = sys.argv
 
@@ -140,6 +142,32 @@ def process_compositional(wrd, words_dict):
     return wrd, new_mrph_lst, status
 
 
+def get_sandhied_form(first, second, internal=True):
+    """ """
+    
+    sandhied_word_list = [ item[0] for item in s.sandhi(first, second) ]
+    second_solution_pairs_wx = [('w', 'h'), ('H', 's'), ('k', 'h'), ('t', 's')]
+    
+    if (len(sandhied_word_list) == 0):
+        return (first + second)
+    else:
+        sandhied_word = ""
+        if (first == "") or (second == ""):
+            sandhied_word = sandhied_word_list[0]
+        elif (first[-1],second[0]) in second_solution_pairs_wx:
+            sandhied_word = sandhied_word_list[1]
+        else:
+            sandhied_word = sandhied_word_list[0]
+        
+        sandhied_word = sandhied_word.replace("><", "H")
+        sandhied_word = sandhied_word.replace("  ", " ")
+        
+        if internal:
+            sandhied_word = sandhied_word.replace(" ", "")
+        
+        return sandhied_word.strip()
+
+
 def process_non_compositional(wrd, words_dict):
     
     components = wrd.split("-")
@@ -149,7 +177,7 @@ def process_non_compositional(wrd, words_dict):
     sandhied_compound = ""
     for comp in components:
         comp = tl.input_transliteration(comp.strip(), "DN")[0]
-        sandhied_compound = sw.sandhi_join(sandhied_compound, comp, False)
+        sandhied_compound = get_sandhied_form(sandhied_compound, comp, False)
     
     sandhied_compound_dev = tl.output_transliteration(sandhied_compound, "deva")[0]
     
